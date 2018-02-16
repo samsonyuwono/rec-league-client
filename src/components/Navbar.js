@@ -1,27 +1,28 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import '../assets/Navbar.css'
 
 
 const link = {
-  width: '100px',
-  padding: '12px',
-  margin: '0 6px 6px',
-  background: '#B6B6B4',
+  width: '200px',
+  padding: '24px',
+  margin: '6px 6px 6px',
+  background: '#000080',
   textDecoration: 'none',
   color: 'white',
-  borderBottomLeftRadius: '10px',
-  borderBottomRightRadius: '10px',
+  borderBottomLeftRadius: '20px',
+  borderBottomRightRadius: '20px',
 }
 
 
 const Navbar = () =>
-  <div className='navbar'>
+  <div className='nav-bar'>
     <NavLink
     to='/'
     exact
     style={link}
     activeStyle={{
-      background: '#D1D0CE'
+      background: '#FF0000'
     }}>Home</NavLink>
 
     <NavLink
@@ -29,7 +30,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#D1D0CE'
+      background: '#FF0000'
     }}>Teams</NavLink>
 
     <NavLink
@@ -37,7 +38,7 @@ const Navbar = () =>
       exact
       style={link}
       activeStyle={{
-      background: '#D1D0CE'
+      background: '#FF0000'
     }}>Add a team</NavLink>
 
     <NavLink
@@ -45,7 +46,7 @@ const Navbar = () =>
       exact
       style={link}
       activeStyle={{
-      background: '#D1D0CE'
+      background: '#FF0000'
     }}>Players</NavLink>
 
 
@@ -54,7 +55,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#D1D0CE'
+      background: '#FF0000'
     }}>Add a player</NavLink>
 
     <NavLink
@@ -62,7 +63,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#D1D0CE'
+      background: '#FF0000'
     }}>Standings</NavLink>
   </div>
 
