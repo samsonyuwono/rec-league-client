@@ -1,6 +1,6 @@
 import { resetPlayerForm } from './playerForm';
 
-const API_URL = process.env.REACT_APP_API_URL;
+let API_URL = "https://rec-league-deploy.herokuapp.com/api";
 
 const setPlayers = players => {
   return {

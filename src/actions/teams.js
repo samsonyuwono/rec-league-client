@@ -1,10 +1,6 @@
 import { resetTeamForm } from './teamForm';
 
-let API_URL = process.env.REACT_APP_API_URL;
-
-if (process.env.NODE_ENV === "production"){
-  process.env.REACT_PRODUCTION_API_URL;
-}
+let API_URL = "https://rec-league-deploy.herokuapp.com/api";
 
 const setTeams = teams => {
   return {
