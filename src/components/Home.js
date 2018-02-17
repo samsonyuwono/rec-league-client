@@ -2,12 +2,24 @@ import React from 'react'
 import Auth from './auth/Auth'
 import '../assets/Home.css'
 
+// const header = {
+//   width: '400px',
+//   height: 'height',
+//   padding: '12px',
+//   color: 'black',
+//
+// }
+//
+// const inputStyle = {
+//   textAlign: 'center'
+// }
+
 const Home = (props) => {
   return(
     <div className='uk-position-medium uk-position-center uk-text-center'>
-      <h1 >Welcome to the Rec League App</h1>
+      <h1>Welcome to the Rec League App</h1>
       <div className="padding-bottom">
-      <img src="https://shalomaustin.org/image/sports-and-fitness/competitve-Champs.jpg"/>
+
         <h3> An open source app for organizing your Rec League</h3>
       </div>
       <div className="padding-bottom">

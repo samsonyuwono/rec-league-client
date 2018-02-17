@@ -12,14 +12,16 @@ import PlayerForm from '../components/players/PlayerForm'
 import PlayerShow from '../components/players/PlayerShow';
 import PlayerEditForm from '../components/players/PlayerEditForm';
 import Navbar from '../components/Navbar'
-
+import ReactDOM from 'react-dom';
 import './../assets/App.css'
+
+let backgroundImage = require('../images/venice_beach.jpg')
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div style ={ { backgroundImage: "url("+backgroundImage+")" } } className="App">
 					<Navbar />
             <Switch>
               <Route exact path='/' component={Home}/>

@@ -5,7 +5,7 @@ import '../assets/Navbar.css'
 
 const link = {
   width: '200px',
-  padding: '24px',
+  padding: '12px',
   margin: '6px 6px 6px',
   background: '#000080',
   textDecoration: 'none',
@@ -22,7 +22,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#FF0000'
+      background: '#FF0000',
     }}>Home</NavLink>
 
     <NavLink
