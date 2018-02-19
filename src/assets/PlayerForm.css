@@ -8,12 +8,16 @@
 }
 
 label {
-
   font-weight: bold;
   display: block;
   height: 50%;
   width: 50%;
   float: left;
+}
 
+input[type=add-player] {
+  border: 1px dotted #999;
+  border-radius: 0;
 
+  -webkit-appearance: none;
 }

@@ -23,23 +23,23 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <div class="container1 overlay">
-        <div id="court"></div>
-					<Navbar />
-            <Switch>
-              <Route exact path='/' component={Home}/>
-              <Route exact path='/teams/standings' component={TeamStandings}/>
-              <Route exact path='/teams/new' component={TeamForm}/>
-              <Route exact path='/teams/:id' component={TeamShow}/>
-							<Route exact path='/teams' component={TeamsList}/>
-              <Route exact path='/teams/:id/edit' component={TeamEditForm}/>
-              <Route exact path='/players' component={PlayersList}/>
-              <Route exact path='/players/new' component={PlayerForm}/>
-              <Route exact path='/players/:id' component={PlayerShow}/>
-              <Route exact path='/players/:id/edit' Redirect to="/players" component={PlayerEditForm}/>
-            </Switch>
+          <div class="container1 overlay">
+            <div id="court"></div>
+					  <Navbar />
+                <Switch>
+                 <Route exact path='/' component={Home}/>
+                 <Route exact path='/teams/standings' component={TeamStandings}/>
+                 <Route exact path='/teams/new' component={TeamForm}/>
+                 <Route exact path='/teams/:id' component={TeamShow}/>
+							   <Route exact path='/teams' component={TeamsList}/>
+                 <Route exact path='/teams/:id/edit' component={TeamEditForm}/>
+                 <Route exact path='/players' component={PlayersList}/>
+                 <Route exact path='/players/new' component={PlayerForm}/>
+                 <Route exact path='/players/:id' component={PlayerShow}/>
+                 <Route exact path='/players/:id/edit' Redirect to="/players" component={PlayerEditForm}/>
+               </Switch>
             </div>
-            </div>
+          </div>
       </Router >
     )
   }

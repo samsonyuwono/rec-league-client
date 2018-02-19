@@ -23,7 +23,7 @@ class TeamForm extends Component {
     const { name, wins, losses, logo_url } = this.props.teamFormData;
 
     return (
-      <div className='teamForm'>
+      <div className='container-team'>
         <h1>Add a team to the League</h1>
         <form class= 'teamForm' onSubmit={this.handleOnSubmit}>
           <div>
