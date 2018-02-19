@@ -1,0 +1,13 @@
+.container1 {
+    position:relative;
+    height: 100%;
+  }
+
+
+
+#court {
+    z-index: 1;
+    height: 400px;
+    background: url("../images/colourful-court.png") no-repeat;
+    background-position: 25% 25%;
+}

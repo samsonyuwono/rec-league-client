@@ -1,0 +1,19 @@
+.playerForm {
+    max-width:400px;
+    margin:50px auto;
+    border-radius:2px;
+    padding-top: 50%;
+    padding:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+label {
+
+  font-weight: bold;
+  display: block;
+  height: 50%;
+  width: 50%;
+  float: left;
+
+
+}

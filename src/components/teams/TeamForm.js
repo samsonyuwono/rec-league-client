@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateTeamFormData } from '../../actions/teamForm';
 import { createTeam } from '../../actions/teams';
+import '../../assets/TeamForm.css'
 
 class TeamForm extends Component {
 
@@ -24,7 +25,7 @@ class TeamForm extends Component {
     return (
       <div className='teamForm'>
         <h1>Add a team to the League</h1>
-        <form onSubmit={this.handleOnSubmit}>
+        <form class= 'teamForm' onSubmit={this.handleOnSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
             <input

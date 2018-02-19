@@ -7,7 +7,7 @@ const link = {
   width: '200px',
   padding: '12px',
   margin: '6px 6px 6px',
-  background: '#000080',
+  background: '#323232',
   textDecoration: 'none',
   color: 'white',
   borderBottomLeftRadius: '20px',
@@ -16,13 +16,13 @@ const link = {
 
 
 const Navbar = () =>
-  <div className='nav-bar'>
+  <div className='navbar'>
     <NavLink
     to='/'
     exact
     style={link}
     activeStyle={{
-      background: '#FF0000',
+      background: '#cccccc',
     }}>Home</NavLink>
 
     <NavLink
@@ -30,7 +30,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#FF0000'
+      background: '#cccccc'
     }}>Teams</NavLink>
 
     <NavLink
@@ -38,7 +38,7 @@ const Navbar = () =>
       exact
       style={link}
       activeStyle={{
-      background: '#FF0000'
+      background: '#cccccc'
     }}>Add a team</NavLink>
 
     <NavLink
@@ -46,7 +46,7 @@ const Navbar = () =>
       exact
       style={link}
       activeStyle={{
-      background: '#FF0000'
+      background: '#cccccc'
     }}>Players</NavLink>
 
 
@@ -55,7 +55,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#FF0000'
+      background: '#cccccc'
     }}>Add a player</NavLink>
 
     <NavLink
@@ -63,7 +63,7 @@ const Navbar = () =>
     exact
     style={link}
     activeStyle={{
-      background: '#FF0000'
+      background: '#cccccc'
     }}>Standings</NavLink>
   </div>
 

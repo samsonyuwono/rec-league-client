@@ -16,8 +16,9 @@ import '../assets/Home.css'
 
 const Home = (props) => {
   return(
-    <div className='uk-position-medium uk-position-center uk-text-center'>
-      <h1>Welcome to the Rec League App</h1>
+    <div className='title'>
+      <h1>Welcome to the Rec League App</h1> 
+
       <div className="padding-bottom">
 
         <h3> An open source app for organizing your Rec League</h3>

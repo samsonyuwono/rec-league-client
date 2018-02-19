@@ -14,14 +14,17 @@ import PlayerEditForm from '../components/players/PlayerEditForm';
 import Navbar from '../components/Navbar'
 import ReactDOM from 'react-dom';
 import './../assets/App.css'
+import './../assets/Background.css'
 
-let backgroundImage = require('../images/venice_beach.jpg')
+
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div style ={ { backgroundImage: "url("+backgroundImage+")" } } className="App">
+        <div className="App">
+        <div class="container1 overlay">
+        <div id="court"></div>
 					<Navbar />
             <Switch>
               <Route exact path='/' component={Home}/>
@@ -35,6 +38,7 @@ class App extends Component {
               <Route exact path='/players/:id' component={PlayerShow}/>
               <Route exact path='/players/:id/edit' Redirect to="/players" component={PlayerEditForm}/>
             </Switch>
+            </div>
             </div>
       </Router >
     )
