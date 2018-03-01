@@ -15,15 +15,38 @@ import Navbar from '../components/Navbar'
 import ReactDOM from 'react-dom';
 import './../assets/App.css'
 import './../assets/Background.css'
-
+import TeamApi from '../services/teamListrApi'
+import LoginForm from '../components/auth/LoginForm'
 
 
 class App extends Component {
+
+  state = {
+    user: {}
+  }
+
+  loginUser = (userObj) => {
+    console.log(userObj)
+        TeamApi.login(userObj)
+        .then((json) => {
+          console.log(json)
+          this.setState({
+            user: json.user
+          })
+          localStorage.setItem('userToken', json.token)
+          console.log('userToken')
+      })
+  }
+
+  componentDidMount(){
+
+}
   render() {
+
     return (
       <Router>
         <div className="App">
-          <div class="container1 overlay">
+          <div className="container1 overlay">
             <div id="court"></div>
 					  <Navbar />
                 <Switch>
@@ -38,6 +61,10 @@ class App extends Component {
                  <Route exact path='/players/:id' component={PlayerShow}/>
                  <Route exact path='/players/:id/edit' Redirect to="/players" component={PlayerEditForm}/>
                </Switch>
+               { localStorage.getItem('userToken') ? <p>Welcome User</p> : "Please login"}
+               <p>{this.state.user.username}</p>
+                 <LoginForm onLogin={this.loginUser}/>
+
             </div>
           </div>
       </Router >
