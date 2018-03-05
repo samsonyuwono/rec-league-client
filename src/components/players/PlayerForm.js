@@ -11,6 +11,7 @@ class PlayerForm extends Component {
     const currentPlayerFormData = Object.assign({}, this.props.playerFormData, {
       [name]: value,
     })
+    debugger;
     this.props.updatePlayerFormData(currentPlayerFormData)
   }
 
@@ -25,7 +26,7 @@ class PlayerForm extends Component {
     return (
       <div className='container-player'>
         <h1>Add a player to your team</h1>
-        <form class= 'playerForm' onSubmit={(event) => this.handleOnSubmit(event)}>
+        <form className = 'playerForm' onSubmit={(event) => this.handleOnSubmit(event)}>
           <div>
             <label htmlFor="name">Name:</label>
             <input
