@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getTeams } from '../../actions/teams'
 import {BootstrapTable,
-       TableHeaderColumn} from 'react-bootstrap-table';
-import '../../assets/Table.css'
+  TableHeaderColumn} from 'react-bootstrap-table';
+  import '../../assets/Table.css'
 
-class TeamStandings extends Component{
+  class TeamStandings extends Component{
 
-  componentDidMount(){
-    this.props.getTeams()
-  }
+    componentDidMount(){
+      this.props.getTeams()
+    }
 
-  render(){
+    render(){
       const sortedTeamWins = this.props.teams.sort((a,b) => { return b.wins - a.wins})
-    return(
-      <BootstrapTable data={this.props.teams} bordered={true} className='tr-style'>
+      return(
+        <BootstrapTable data={this.props.teams} bordered={true} className= 'tr-style'>
         <TableHeaderColumn dataField='id' isKey hidden> ID </TableHeaderColumn>
 
         <TableHeaderColumn dataField='name'> Name </TableHeaderColumn>
@@ -22,15 +22,15 @@ class TeamStandings extends Component{
         <TableHeaderColumn dataField='wins'> Wins </TableHeaderColumn>
 
         <TableHeaderColumn dataField='losses'> Losses </TableHeaderColumn>
-      </BootstrapTable>
-    )
+        </BootstrapTable>
+      )
+    }
   }
-}
 
-const mapStateToProps = (state) => {
-  return ({
-    teams: state.teams
-  })
-}
+  const mapStateToProps = (state) => {
+    return ({
+      teams: state.teams
+    })
+  }
 
-export default connect (mapStateToProps, {getTeams})(TeamStandings)
+  export default connect (mapStateToProps, {getTeams})(TeamStandings)

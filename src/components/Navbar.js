@@ -14,9 +14,46 @@ const link = {
   borderBottomRightRadius: '20px',
 }
 
+const GuestBar = () =>
+<div className='guestbar'>
+<NavLink
+to='/signup'
+exact
+style={link}
+activeStyle={{
+  background: '#cccccc',
+}}>Sign Up</NavLink>
+
+<NavLink
+to='/login'
+exact
+style={link}
+activeStyle={{
+  background: '#cccccc',
+}}>Login</NavLink>
+
+
+</div>
 
 const Navbar = () =>
   <div className='navbar'>
+
+  <NavLink
+  to='/signup'
+  exact
+  style={link}
+  activeStyle={{
+    background: '#cccccc',
+  }}>Sign Up</NavLink>
+
+  <NavLink
+  to='/login'
+  exact
+  style={link}
+  activeStyle={{
+    background: '#cccccc',
+  }}>Login</NavLink>
+
     <NavLink
     to='/'
     exact

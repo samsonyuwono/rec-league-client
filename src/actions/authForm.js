@@ -5,7 +5,7 @@ export const updateAuthFormData = authFormData => {
   }
 }
 
-export const resetPlayerForm = () => {
+export const resetAuthForm = () => {
   return {
     type: 'RESET_AUTH_FORM'
   }

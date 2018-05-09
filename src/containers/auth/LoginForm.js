@@ -20,6 +20,7 @@ class LoginForm extends Component {
     event.preventDefault()
     // const userData = { username: this.state.username, password: this.state.password }
     this.props.loginUser(this.props.loginFormData)
+    debugger;
   }
 
   render() {

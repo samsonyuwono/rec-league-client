@@ -11,7 +11,6 @@ class PlayerForm extends Component {
     const currentPlayerFormData = Object.assign({}, this.props.playerFormData, {
       [name]: value,
     })
-    debugger;
     this.props.updatePlayerFormData(currentPlayerFormData)
   }
 

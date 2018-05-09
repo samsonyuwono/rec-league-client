@@ -1,84 +1,91 @@
-import React, {Component} from 'react';
-import classnames from 'classnames';
-import { connect } from 'react-redux'
-import { signupUser } from '../../actions/auth';
-import {AuthFormWrapper} from '../../components/AuthFormWrapper';
-import SubmitButton from '../../components/SubmitButton';
+import React, { Component } from "react";
+import classnames from "classnames";
+import { connect } from "react-redux";
+import { signupUser } from "../../actions/auth";
+import { updateAuthFormData } from "../../actions/authForm";
+import SubmitButton from "../../components/SubmitButton";
 
 class SignUpPage extends Component {
   constructor() {
     super();
 
     this.state = {
-      username: '',
-      password: ''
-    }
+      fields: {
+        username: "",
+        password: ""
+      }
+    };
   }
-
-  handleChange = (event) => {
-    const {name, value} = event.target
-    this.setState({
+  handleOnChange = event => {
+    console.log(event.target);
+    const { name, value } = event.target;
+    const currentAuthFormData = Object.assign({}, this.props.authFormData, {
       [name]: value
-    })
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.signupUser(this.state);
-    this.setState({
-      username: '',
-      password: ''
     });
-  }
+    this.props.updateAuthFormData(currentAuthFormData);
+  };
 
-  // redirect only if user logs in successfully
-  componentWillReceiveProps(props) {
-    if (!!props.token) {
-      this.props.history.push('/players')
-    }
-  }
+  handleOnSubmit = event => {
+    console.log(this.props);
+    event.preventDefault();
+    this.props.signupUser(this.props.authFormData, this.props.history);
+    debugger;
+  };
+  //
+  // componentWillReceiveProps(props) {
+  //   debugger;
+  //   if (!!props.token) {
+  //     this.props.history.push('/players')
+  //   }
+  // }
 
   render() {
-    const { username, password } = this.state
-    const { signup_errors, isLoading } = this.props
-
+    const { signup_errors, isLoading, username, password } = this.props;
     return (
-      <AuthFormWrapper title={"Sign Up"} handleSubmit={this.handleSubmit}>
+      <div style={{ width: "330px", margin: "auto" }}>
+        <h2 className="form-signin-heading">Sign Up</h2>
+        <form
+          className="signupForm"
+          onSubmit={event => this.handleOnSubmit(event)}
+        >
+          <div
+            className={classnames("form-group", {
+              "has-error": signup_errors && signup_errors.username
+            })}
+          >
+            <input
+              type="username"
+              name="username"
+              value={username}
+              onChange={this.handleOnChange}
+              placeholder="username"
+            />
+          </div>
 
-        <div className={classnames("form-group", {'has-error': signup_errors && signup_errors.username })}>
-          <input
-            type="username"
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-            className="form-control"
-            placeholder="username"
-            required autoFocus
-          />
-          {signup_errors && signup_errors.username ? <span className="help-block">This username&nbsp;{signup_errors.username}</span> : null}
-        </div>
-
-        <div className="form-group">
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-            className="form-control"
-            placeholder="password"
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <SubmitButton text={"Sign Up"} isLoading={isLoading}/>
-        </div>
-
-      </AuthFormWrapper>
-    )
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleOnChange}
+              placeholder="password"
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    authFormData: state.authFormData
+  };
+};
 
-
-export default SignUpPage
+export default connect(mapStateToProps, { updateAuthFormData, signupUser })(
+  SignUpPage
+);

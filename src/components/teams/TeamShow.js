@@ -22,19 +22,19 @@ class TeamShow extends Component {
     const teamShow = () => {
       const players = this.props.players
       const teamId = parseInt(this.props.match.params.id)
-        const sortedTeamPlayers = players.filter(player => player.team_id === teamId)
-        if (sortedTeamPlayers.length === 0){
+      const sortedTeamPlayers = players.filter(player => player.team_id === teamId)
+      if (sortedTeamPlayers.length === 0){
+        return(
+          <p>Please add players to your roster in the form below.</p>
+        )
+      }
+      else{
+        return sortedTeamPlayers.map(player=>{
           return(
-            <p>Please add players to your roster in the form below.</p>
-          )
-        }
-        else{
-          return sortedTeamPlayers.map(player=>{
-            return(
-          <div key={player.id}>
-          <img className="PlayerShow" src={player.image_url} alt={player.name} /><br></br>
-          {player.name}
-          </div>
+            <div key={player.id}>
+            <img className="PlayerShow" src={player.image_url} alt={player.name} /><br></br>
+            {player.name}
+            </div>
           )
         })
       }

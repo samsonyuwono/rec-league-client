@@ -30,7 +30,7 @@ render(){
         name="team_select">
         {teamOptions}
       </select>
-      </div>
+    </div>
     )
   }
 }

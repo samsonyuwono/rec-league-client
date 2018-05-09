@@ -1,8 +1,20 @@
+import { resetAuthForm } from './authForm';
+
+let API_URL = "http://localhost:3001/api";
+
+const addUser = user => {
+  return {
+    type: 'SIGN_UP_USER',
+    user
+  }
+}
+
 export function signupUser(userData) {
+  console.log
   return (dispatch) => {
     dispatch({type: "SEND_AUTH_REQUEST"});
-    return fetch("/api/users", {
-      method: "post",
+    return fetch(`${API_URL}/users`, {
+      method: 'POST',
       body: JSON.stringify(userData),
       headers: {
         "Accept": "application/json",
@@ -20,8 +32,8 @@ export function signupUser(userData) {
 export function loginUser(userData) {
   return (dispatch) => {
     dispatch({type: "SEND_AUTH_REQUEST"});
-    return fetch("http://localhost:3000/api/login", {
-      method: "post",
+    return fetch(`${API_URL}/login`, {
+      method: 'POST',
       body: JSON.stringify(userData),
       headers: {
         "Accept": "application/json",

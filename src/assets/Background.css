@@ -6,6 +6,9 @@
 #court {
     z-index: 1;
     height: 400px;
-    background: url("../images/colourful-court.png") no-repeat;
+    width: auto;
+    background: url("../images/colourful-court.png") no-repeat center;
+    background-size: 100%;
+    background-repeat: repeat-y;
     background-position: 25% 25%;
 }
